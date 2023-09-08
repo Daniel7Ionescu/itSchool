@@ -1,4 +1,4 @@
-package session2.challenges;
+package session2;
 
 public class SomeVariables {
     private int anInt = 7;
