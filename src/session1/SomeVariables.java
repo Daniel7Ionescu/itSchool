@@ -1,4 +1,4 @@
-package session2;
+package session1;
 
 public class SomeVariables {
     private int anInt = 7;

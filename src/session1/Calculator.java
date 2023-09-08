@@ -1,4 +1,4 @@
-package session2;
+package session1;
 
 public class Calculator {
     public double add(double num1, double num2) {
