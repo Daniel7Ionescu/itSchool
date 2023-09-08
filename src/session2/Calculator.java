@@ -1,4 +1,4 @@
-package session2.challenges;
+package session2;
 
 public class Calculator {
     public double add(double num1, double num2) {

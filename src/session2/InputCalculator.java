@@ -1,4 +1,4 @@
-package session2.challenges;
+package session2;
 
 import java.util.Scanner;
 
