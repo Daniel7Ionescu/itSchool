@@ -2,7 +2,7 @@ package session4.challenges;
 
 import java.util.ArrayList;
 
-public class challenge6to10 {
+public class Challenges6to10 {
 
     public static void main(String[] args) {
 //        6. Print Hot, Warm or Cold based on temperature value
