@@ -1,6 +1,6 @@
 package session4.challenges;
 
-public class challenge11to16 {
+public class Challenges11to16 {
 
     public static void main(String[] args) {
 //        11. Addition, multiplication and assignment
