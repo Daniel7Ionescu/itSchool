@@ -3,7 +3,7 @@ package session5.challenges;
 public class FibonacciSeriesGenerator {
 
     public static void main(String[] args) {
-        printFirstNNumbersFibonacci(5);
+        printFirstNNumbersFibonacci(10);
     }
 
     private static void printFirstNNumbersFibonacci(int number) {
@@ -12,7 +12,7 @@ public class FibonacciSeriesGenerator {
         int nextNumber = 1;
         int sumHolder = 0;
 
-        while (counter <= number) {
+        while (counter < number) {
             System.out.print(currentNumber + " ");
             sumHolder = currentNumber + nextNumber;
             currentNumber = nextNumber;
