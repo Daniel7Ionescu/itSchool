@@ -5,24 +5,24 @@ public class PathfindingInAMaze {
     public static void main(String[] args) {
         String[][] maze1 = {
                 {"S", "1", "0", "1"},
-                {"0", "1", "0", "1"},
+                {"0", "0", "0", "1"},
                 {"0", "1", "0", "1"},
                 {"0", "0", "0", "E"}
         };
 
         String[][] maze2 = {
-                {"S", "1", "0", "1"},
-                {"0", "1", "0", "E"},
-                {"0", "1", "0", "1"},
-                {"0", "0", "0", "0"},
-                {"0", "0", "0", "1"}
+                {"S", "1", "0", "1", "1"},
+                {"0", "1", "E", "0", "1"},
+                {"0", "1", "1", "0", "1"},
+                {"0", "1", "1", "0", "1"},
+                {"0", "0", "0", "0", "1"}
         };
 
-        Maze maze = new Maze(maze1, "S", "E");
+        Maze maze = new Maze(maze2, "S", "E");
         Pathfinder pathfinder = new Pathfinder(maze);
 
         //an array to hold the starting row/col so I can move the start symbol around
-        int[] startCoords = findStart(maze1, "S");
+        int[] startCoords = findStart(maze2, "S");
 
         if (pathfinder.mazeRunner(startCoords[0], startCoords[1])) {
             System.out.println("I escaped!");
