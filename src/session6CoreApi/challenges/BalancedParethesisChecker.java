@@ -1,4 +1,4 @@
-package session6CoreApi;
+package session6CoreApi.challenges;
 
 public class BalancedParethesisChecker {
 
