@@ -9,19 +9,19 @@ public class IntToRoman {
     }
 
     public static String intToRoman(int num) {
-        String romanNumber = "";
+        StringBuilder romanNumber = new StringBuilder();
         String strNum = String.valueOf(num);
 
-        for (int i = 0; i < strNum.length(); i++){
+        for (int i = 0; i < strNum.length(); i++) {
             int number = Character.getNumericValue(strNum.charAt(i));
             int howManyZeroes = strNum.length() - 1 - i;
-            romanNumber += numToRoman(number, howManyZeroes);
+            romanNumber.append(numToRoman(number, howManyZeroes));
         }
-        return romanNumber;
+        return romanNumber.toString();
     }
 
-    public static String numToRoman(int num, int zeroes){
-        String result = "";
+    public static String numToRoman(int num, int zeroes) {
+        StringBuilder result = new StringBuilder();
         int multiplyBy = 1;
         int myNumber;
 
@@ -29,19 +29,19 @@ public class IntToRoman {
         String[] romanNumbers = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         int[] majorNumbers = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
-        while(zeroes > 0){
+        while (zeroes > 0) {
             zeroes--;
             multiplyBy *= 10;
         }
 
         myNumber = num * multiplyBy;
         //assign roman to number;
-        for(int i = 0; i < majorNumbers.length; i++){
-            while(myNumber >= majorNumbers[i]){
+        for (int i = 0; i < majorNumbers.length; i++) {
+            while (myNumber >= majorNumbers[i]) {
                 myNumber -= majorNumbers[i];
-                result += romanNumbers[i];
+                result.append(romanNumbers[i]);
             }
         }
-        return result;
+        return result.toString();
     }
 }
