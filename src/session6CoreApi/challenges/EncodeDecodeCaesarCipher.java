@@ -27,6 +27,6 @@ public class EncodeDecodeCaesarCipher {
             //add the new letter to newStr
             newStr.append((char) letterCode);
         }
-        return newStr.toString().toString();
+        return newStr.toString();
     }
 }
