@@ -36,11 +36,3 @@ public class GradebookApp {
 
     }
 }
-
-/*
-Math
-    tim: 4, 5, 6
-    bob: 7, 8 ,9
-course.student
-courseMath.studentStan.getGrades()
- */
