@@ -17,7 +17,6 @@ public class SchoolAdmin {
     public void addStudentToCourse(Course course, Student student){
         course.addStudent(student);
         student.attendCourse(course);
-
     }
 
     public void gradeStudent(Course course, double grade, Student student){
