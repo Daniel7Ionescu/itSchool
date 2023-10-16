@@ -3,7 +3,7 @@ package session6_core_api.challenges;
 public class EncodeStringsWithRunLengthEncoding {
 
     public static void main(String[] args) {
-        String str = "AAAABBBCCDDDDDDDEEE";
+        String str = "A";
         System.out.println(encodeStringRLE(str));
     }
 
