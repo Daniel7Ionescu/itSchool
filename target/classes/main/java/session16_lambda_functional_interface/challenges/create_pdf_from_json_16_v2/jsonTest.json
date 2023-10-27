@@ -1,0 +1,21 @@
+{
+  "title" : "Cool resume",
+  "personalDetails" : {
+    "name" : "John Doe",
+    "adress" : "123 Main St, Hometown, USA",
+    "phoneNumber" : 123456789,
+    "email" : "john.doe@gmail.com"
+  },
+  "objective" : "To leverage my 5 years of experience in Java development and problem-solving skills in a senior developer role, contributing to team successes through hard work and collaboration.",
+  "education" : {
+    "university" : "ABC University",
+    "degree" : "Bachelor of Science in Computer Science",
+    "graduationDate" : "May 2020"
+  },
+  "skills" : [
+    "- Java Programming",
+    "- Project Management",
+    "- Agile Methodologies",
+    "- Communication Skills"
+  ]
+}
