@@ -13,35 +13,16 @@ public class Session17Util {
                 .reduce(0, (acc, value) -> acc + value);
     }
 
-    static List<String> getFrequentWordInList(List<String> stringList) {
-        //flatten
-        List<String> words = stringList.stream()
+    static void printFrequentWord(List<String> stringList) {
+        List<Map.Entry<String, Integer>> wordFrequencyMap = stringList.stream()
                 .flatMap(string -> Arrays.stream(string.split(" ")))
-                .toList();
-
-        //put in map with a counter
-        Map<String, Integer> wordMap = new HashMap<>();
-        for (String word : words) {
-            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
-        }
-
-        //looking for the most frequent word
-        Map.Entry<String, Integer> mostFreq = null;
-        for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
-            if (mostFreq == null || entry.getValue().compareTo(mostFreq.getValue()) > 0) {
-                mostFreq = entry;
-            }
-        }
-
-        //check is other words are as frequent, add most freq word or words
-        List<String> freqWords = new ArrayList<>();
-        for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
-            if (!entry.getKey().equals(mostFreq) && entry.getValue() == mostFreq.getValue()) {
-                freqWords.add(entry.getKey());
-            }
-        }
-        //maybe some formatting
-        return freqWords;
+                .collect(Collectors.groupingBy(element -> element))
+                .entrySet().stream()
+                .collect(Collectors.toMap(stringListEntry -> stringListEntry.getKey(), stringListEntry -> stringListEntry.getValue().size()))
+                .entrySet().stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .stream().toList();
+        System.out.println("Frequent word is: " + wordFrequencyMap);
     }
 
     static int getNumberOfVowels(String string) {
@@ -98,5 +79,37 @@ public class Session17Util {
         return integerList.stream()
                 .filter(number -> number % 2 == 0)
                 .toList();
+    }
+
+    //checks if there are more words with the same max frequency
+    static List<String> getFrequentWordInList(List<String> stringList) {
+        //flatten
+        List<String> words = stringList.stream()
+                .flatMap(string -> Arrays.stream(string.split(" ")))
+                .toList();
+
+        //put in map with a counter
+        Map<String, Integer> wordMap = new HashMap<>();
+        for (String word : words) {
+            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
+        }
+
+        //looking for the most frequent word
+        Map.Entry<String, Integer> mostFreq = null;
+        for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+            if (mostFreq == null || entry.getValue().compareTo(mostFreq.getValue()) > 0) {
+                mostFreq = entry;
+            }
+        }
+
+        //check if other words are as frequent, add most freq word or words
+        List<String> freqWords = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+            if (!entry.getKey().equals(mostFreq) && entry.getValue() == mostFreq.getValue()) {
+                freqWords.add(entry.getKey());
+            }
+        }
+        //maybe some formatting
+        return freqWords;
     }
 }

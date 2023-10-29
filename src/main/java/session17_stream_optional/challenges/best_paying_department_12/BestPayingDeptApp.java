@@ -21,6 +21,6 @@ public class BestPayingDeptApp {
 
         List<Employee> employeeList = Arrays.asList(employeeEric, employeeWendy, employeeStan, employeeKyle, employeeKenny, employeeButters);
 
-        DeptPay.salaryDetails(employeeList);
+        DeptPay.printBestDepartmentTotalSalary(employeeList);
     }
 }

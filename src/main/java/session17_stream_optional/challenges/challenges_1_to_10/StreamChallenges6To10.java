@@ -26,12 +26,16 @@ public class StreamChallenges6To10 {
         System.out.println("Number of vowels in " + sentence + " : " + numOfVowelsInString);
 
         //challenge 9 flatMap to create a list of all words in all the sentences, find the most frequently occurring word.
+        //a mix of stream and loops
         List<String> frequentWord = getFrequentWordInList(sentences);
         System.out.println("Frequent word: " + frequentWord);
+        //full stream implementation
+        printFrequentWord(sentences);
 
         //challenge 10 find the total number of characters across a list of strings excluding whitespace characters.
         int numberOfCharacters =  getNumOfCharsNoWhitespace(stringsChallenge10);
         System.out.println("Number of characters: " + numberOfCharacters);
+
     }
 
 
