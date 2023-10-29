@@ -91,7 +91,7 @@ public class Session17Util {
     static String getLongestString(List<String> stringList) {
         return stringList.stream()
                 .max(Comparator.comparing(String::length))
-                .get();
+                .orElse("String list is empty.");
     }
 
     static List<Integer> getEvenNumbers(List<Integer> integerList) {

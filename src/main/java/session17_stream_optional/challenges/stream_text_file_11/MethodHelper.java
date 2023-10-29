@@ -12,7 +12,7 @@ public class MethodHelper {
             return Files.lines(textPath)
                     .flatMap(line -> Arrays.stream(line.split(" ")))
                     .max(Comparator.comparing(String::length))
-                    .get();
+                    .orElse("Error bro");
     }
 
 }
