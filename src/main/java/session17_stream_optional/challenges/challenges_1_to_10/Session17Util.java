@@ -27,7 +27,7 @@ public class Session17Util {
 
     static int getNumberOfVowels(String string) {
         List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
-        return (int) Arrays.stream(string.split(""))
+        return (int) Arrays.stream(string.toLowerCase().split(""))
                 .filter(vowels::contains)
                 .count();
     }

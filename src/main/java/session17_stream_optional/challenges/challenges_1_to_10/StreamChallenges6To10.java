@@ -33,12 +33,7 @@ public class StreamChallenges6To10 {
         printFrequentWord(sentences);
 
         //challenge 10 find the total number of characters across a list of strings excluding whitespace characters.
-        int numberOfCharacters =  getNumOfCharsNoWhitespace(stringsChallenge10);
+        int numberOfCharacters = getNumOfCharsNoWhitespace(stringsChallenge10);
         System.out.println("Number of characters: " + numberOfCharacters);
-
     }
-
-
-
-
 }
